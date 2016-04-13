@@ -1,0 +1,35 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <MultiSelectListPreference
+        android:defaultValue="@array/pref_default_block"
+        android:entries="@array/pref_block_titles"
+        android:entryValues="@array/pref_block_values"
+        android:key="@string/key_block"
+        android:title="@string/pref_title_block" />
+
+
+    <ListPreference
+        android:defaultValue="@string/pref_default_timeout"
+        android:entries="@array/pref_block_timeout_titles"
+        android:entryValues="@array/pref_block_timeout_values"
+        android:key="@string/key_timeout"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null"
+        android:title="@string/pref_title_block_timeout" />
+
+    <eun.silencerecurringnotifications.DescriptionPreference
+        android:key="block_timeout_explanation" />
+
+
+    <SwitchPreference
+        android:defaultValue="@bool/pref_default_silent"
+        android:key="@string/key_silent"
+        android:title="@string/pref_title_silent"
+        android:summary="@string/pref_summary_silent" />
+
+    <SwitchPreference
+        android:defaultValue="@bool/pref_default_remove"
+        android:key="@string/key_remove"
+        android:title="@string/pref_title_remove"
+        android:summary="@string/pref_summary_remove" />
+
+</PreferenceScreen>

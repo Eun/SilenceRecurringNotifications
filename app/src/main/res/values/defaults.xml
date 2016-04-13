@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="pref_default_block">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string name="pref_default_timeout">10</string>
+    <bool name="pref_default_silent">false</bool>
+    <bool name="pref_default_remove">false</bool>
+    <bool name="pref_enable_apps_default">false</bool>
+</resources>

@@ -1,0 +1,124 @@
+<resources>
+    <string name="app_name">Silence Recurring Notifications</string>
+
+    <!-- SnackBars -->
+    <string name="service_not_enabled">To use this app you need to enable the service in your Android settings.</string>
+    <string name="open_notification_listener_settings">Open Notification Settings</string>
+    <string name="permission_denied">To use this app you need to enable the access to external storage.</string>
+    <string name="open_permission_dialog">Ok</string>
+    <string name="global_disabled">The service is currently disabled.</string>
+    <string name="global_enable">Enable</string>
+
+    <!-- General -->
+    <string name="pref_header_general">Global Settings</string>
+    <string name="pref_general_summary">Settings for all notifications</string>
+
+    <string name="pref_title_block">Silence</string>
+    <string-array name="pref_block_titles">
+        <item>Sound</item>
+        <item>Vibration</item>
+        <item>Lights</item>
+    </string-array>
+    <string-array name="pref_block_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+
+
+    <string name="pref_title_block_timeout">Time Span</string>
+    <string-array name="pref_block_timeout_titles">
+        <item>1 second</item>
+        <item>2 seconds</item>
+        <item>5 seconds</item>
+        <item>10 seconds</item>
+        <item>15 seconds</item>
+        <item>30 seconds</item>
+        <item>45 seconds</item>
+        <item>1 minute</item>
+        <item>5 minutes</item>
+        <item>10 minutes</item>
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>45 minutes</item>
+        <item>60 minutes</item>
+    </string-array>
+    <string-array name="pref_block_timeout_values">
+        <item>1</item>
+        <item>3</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>30</item>
+        <item>45</item>
+        <item>60</item>
+        <item>300</item>
+        <item>600</item>
+        <item>900</item>
+        <item>1800</item>
+        <item>2700</item>
+        <item>3600</item>
+    </string-array>
+
+
+    <string name="pref_title_block_timeout_explanation"><![CDATA[
+        Set <i>TimeSpan</i> to a time in which notifications should be blocked.<br/>
+        <br/>
+        <b>Example</b><br/>
+        <br/>
+            Set the <i>TimeSpan</i> to <b>10</b> seconds.<br/>
+            <br/>
+                <tt><b>App</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Time</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Action</b></tt><br/>
+                <tt>App A&nbsp;&nbsp;&nbsp;10:00:00&nbsp;&nbsp;&nbsp;Not silenced</tt><br/>
+                <tt><font color="red">App A</font>&nbsp;&nbsp;&nbsp;<font color="red">10:00:02</font>&nbsp;&nbsp;&nbsp;<font color="red">Silenced</font></tt><br/>
+                <tt><font color="green">App B</font>&nbsp;&nbsp;&nbsp;<font color="red">10:00:04</font>&nbsp;&nbsp;&nbsp;<font color="green">Not silenced</font></tt><br/>
+                <tt><font color="red">App A</font>&nbsp;&nbsp;&nbsp;<font color="red">10:00:06</font>&nbsp;&nbsp;&nbsp;<font color="red">Silenced</font></tt><br/>
+                <tt><font color="red">App A</font>&nbsp;&nbsp;&nbsp;<font color="green">10:00:11</font>&nbsp;&nbsp;&nbsp;<font color="green">Not silenced</font></tt><br/>
+        ]]>
+    </string>
+
+
+    <string name="pref_title_silent">Silence all notifications</string>
+    <string name="pref_summary_silent">Completely silence all notifications, no matter what</string>
+
+
+    <string name="pref_title_remove">Remove all notifications</string>
+    <string name="pref_summary_remove">Completely hide and remove notifications</string>
+
+
+
+
+    <!-- App settings -->
+    <string name="pref_header_apps">App-Settings</string>
+    <string name="pref_summary_apps">Set custom settings per app basis</string>
+
+
+    <string name="pref_enable_apps">Enable App-Settings</string>
+
+
+    <string name="pref_category_apps">Apps</string>
+    <string name="menu_add_app">Add App</string>
+    <string name="select_application">Select App</string>
+    <string name="dialog_delete_title">Delete</string>
+    <string name="dialog_delete_message">Remove selected item?</string>
+
+
+    <!-- preference files -->
+    <string name="pref_global">global</string>
+    <string name="pref_apps">apps</string>
+
+    <!-- preference keys in global -->
+    <string name="key_enabled">enabled</string>
+    <string name="key_apps_enable">apps_enable</string>
+
+    <!-- preference keys in global & apps -->
+    <string name="key_block">block</string>
+    <string name="key_timeout">timeout</string>
+    <string name="key_silent">silent</string>
+    <string name="key_remove">remove</string>
+
+
+    <!-- preference keys in apps -->
+    <string name="key_apps_list">apps</string>
+</resources>

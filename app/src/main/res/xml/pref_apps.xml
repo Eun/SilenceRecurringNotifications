@@ -1,0 +1,12 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <SwitchPreference
+        android:defaultValue="@bool/pref_enable_apps_default"
+        android:key="@string/key_apps_enable"
+        android:title="@string/pref_enable_apps" />
+
+    <PreferenceCategory
+        android:key="cat_apps"
+        android:title="@string/pref_category_apps"
+        android:dependency="@string/key_apps_enable"
+        />
+</PreferenceScreen>
