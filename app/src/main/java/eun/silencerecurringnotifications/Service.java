@@ -57,7 +57,7 @@ public class Service extends NotificationListenerService {
     private Vibrator mVibrator;
 
     private Handler mSoundHandler;
-    private String mSoundHandlerWorkingOn;
+    private String mSoundHandlerWorkingOn = "";
     private AppSettings mGlobalSettings;
     private boolean mIsEnabled = false;
 

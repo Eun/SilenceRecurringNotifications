@@ -34,6 +34,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class AppPicker extends ListActivity {
+    private static final String OwnPackageName = Service.class.getPackage().getName();
     private AppListAdapter mAdapter;
 
 
@@ -83,10 +84,12 @@ public class AppPicker extends ListActivity {
             List<ApplicationInfo> pkgs = context.getPackageManager().getInstalledApplications(0);
             for (int i=0; i<pkgs.size(); i++) {
                 ApplicationInfo ai = pkgs.get(i);
-                MyApplicationInfo info = new MyApplicationInfo();
-                info.info = ai;
-                info.label = info.info.loadLabel(getPackageManager()).toString();
-                mPackageInfoList.add(info);
+                if (!ai.packageName.equalsIgnoreCase(OwnPackageName)) {
+                    MyApplicationInfo info = new MyApplicationInfo();
+                    info.info = ai;
+                    info.label = info.info.loadLabel(getPackageManager()).toString();
+                    mPackageInfoList.add(info);
+                }
             }
             Collections.sort(mPackageInfoList, sDisplayNameComparator);
             addAll(mPackageInfoList);
