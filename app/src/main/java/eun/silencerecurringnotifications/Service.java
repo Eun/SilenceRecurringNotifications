@@ -68,17 +68,27 @@ public class Service extends NotificationListenerService {
 
     private boolean mCancelLights = false;
 
-    private Notification mBlockLightNotification;
-
     private BroadcastReceiver mScreenReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)) {
-                mNotificationManager.cancel(mLightsNotificationId);
-            }
-            else if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)) {
-                if (mCancelLights) {
-                     mNotificationManager.notify(mLightsNotificationId, mBlockLightNotification);
+            if (mIsEnabled) {
+                if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)) {
+                    Log.d(TAG, "Screen is On");
+                    mNotificationManager.cancel(mLightsNotificationId);
+                } else if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)) {
+                    Log.d(TAG, "Screen is Off");
+                    if (mCancelLights) {
+                        Log.d(TAG, "Canceling");
+                        try {
+                            mNotificationManager.notify(mLightsNotificationId, new Notification.Builder(context)
+                                    .setSmallIcon(R.drawable.transparent)
+                                    .setPriority(Notification.PRIORITY_HIGH)
+                                    .setLights(0, 10000, 10000)
+                                    .build());
+                        } catch (Exception e) {
+                            Log.d(TAG, "Exception", e);
+                        }
+                    }
                 }
             }
         }
@@ -96,11 +106,7 @@ public class Service extends NotificationListenerService {
             Log.d(TAG, "Got no permission to read sound files.");
         }
         mNotificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
-        mBlockLightNotification = new Notification.Builder(this)
-                .setSmallIcon(R.drawable.transparent)
-                .setPriority(Notification.PRIORITY_HIGH)
-                .setLights(0,10000,10000)
-                .build();
+
         registerReceiver(mScreenReceiver, new IntentFilter(Intent.ACTION_SCREEN_ON));
         registerReceiver(mScreenReceiver, new IntentFilter(Intent.ACTION_SCREEN_OFF));
     }
